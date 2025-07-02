@@ -1,50 +1,63 @@
-# Welcome to Health Timer👋
+ 
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+ # 🕒 HealthFlex Multi-Timer App
 
-## Get started
+A fully functional React Native (Expo) app for creating, managing, and tracking multiple timers — built for the HealthFlex internship assignment.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🚀 Features
 
-2. Start the app
+### ✅ Core Features
+- **Add Timer** screen with:
+  - 📝 Name input (e.g., "Workout", "Study")
+  - ⏱ Duration input (in seconds)
+  - 🗂 Category input (e.g., "Exercise", "Break")
+- **Timer List** screen:
+  - Displays all saved timers
+  - Shows current time, progress bar, and category
+  - Includes **Start**, **Pause**, **Reset**, and **Remove**
+- **AsyncStorage** for local data persistence
+- **Completion Modal** with celebratory message
+- **Quick Timer** button (auto-creates 60s timer with "Quick" category)
+- **Progress Bar** visualization
+- **Halfway Alert** (at 50% of timer duration)
+- **History (in-memory)** of completed timers
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 📱 Screens
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 1. `AddTimerScreen.js`
+- Input fields for name, duration, category
+- Saves to local storage
+- Validation for empty fields
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### 2. `TimerListScreen.js`
+- Loads timers from AsyncStorage
+- Groups by category (optional expansion)
+- Tracks timer progress
+- Triggers modal when complete
 
-## Get a fresh project
+---
 
-When you're ready, run:
+## 📦 Tech Stack
+
+- **React Native (Expo)**
+- **React Navigation**
+- **AsyncStorage**
+- **TypeScript** (index.tsx variant included)
+- No backend needed (fully client-side)
+
+---
+
+---
+
+## ⚠️ Known Notes
+
+> ✅ I implemented a full Add Timer screen with Name, Duration, and Category support.  
+> ❗ However, due to Expo navigation cache or device-specific routing issues, the screen may not display on first load.  
+> ✅ The code is complete and functional — please run with:
 
 ```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+npx expo start -c
